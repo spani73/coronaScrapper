@@ -13,6 +13,10 @@ function cb(error, response, html){
 }
 function handlehtml(html){
   let selTool = cheerio.load(html);
-  let h1s = selTool("h1");
+  let carray = selTool("#maincounter-wrap span");
+  console.log("total cases" , selTool(carray[0]).text());
+  console.log("total deaths" , selTool(carray[1]).text());
+  console.log("total recovered" , selTool(carray[2]).text());
 
+  
 }
